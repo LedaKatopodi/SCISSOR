@@ -3,7 +3,7 @@
 
 ## 🍴 Leda's forked version: modified version of SCISSOR's `build_gaf` function
 
-SCISSOR's `build_gaf` function seems to have been modified, and the `Gene` argument seems to have been removed. It also browses through the whole GTF file (input) and exports the regions (the exons per gene, in a concatenated string form) for all genes included in the annotation file. This significantly increases runtime, whereas no option to select for genes of interest is given.
+SCISSOR's `build_gaf` function seems to have been modified, and the `Gene` argument seems to have been removed. `build_gaf` also browses through the whole GTF file (input) and exports the regions (the exons per gene, in a concatenated string form) for all genes included in the annotation file. This significantly increases runtime, whereas no option to select for genes of interest is given.
 
 R code for modified function: [BuildExonsFromGTF_GeneSelection.R](https://github.com/LedaKatopodi/SCISSOR/blob/master/R/BuildExonsFromGTF_GeneSelection.R)
 
