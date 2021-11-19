@@ -1,5 +1,23 @@
 
-# SCISSOR [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4269205.svg)](https://doi.org/10.5281/zenodo.4269205)
+# (*forked*) SCISSOR [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4269205.svg)](https://doi.org/10.5281/zenodo.4269205) 
+
+## 🍴 Leda's forked version: modified version of SCISSOR's `build_gaf` function
+
+SCISSOR's `build_gaf` function seems to have been modified, and the `Gene` argument seems to have been removed. It also browses through the whole GTF file (input) and exports the regions (the exons per gene, in a concatenated string form) for all genes included in the annotation file. This significantly increases runtime, whereas no option to select for genes of interest is given.
+
+R code for modified function: [BuildExonsFromGTF_GeneSelection.R](https://github.com/LedaKatopodi/SCISSOR/blob/master/R/BuildExonsFromGTF_GeneSelection.R)
+
+In this modified version:
+
+1. A list with genes of interest can be supplied as argument. The function subsets the input file, and returns only the regions (exons) for the selected genes. If no gene list is specified, the function operates on the initial input file and will return the regions for all genes present in the annotation.
+
+2. The function prioritizes a single annotation source for which to return the regions. Annotation priority is as follows: **Ensembl-Havana > Ensembl > Havana**. This was done in hope of alleviating issues similar to those described in [issue hyochoi#3](hyochoi#3), which seem to stem from the concatenation of exons from all available sources. The annotation prioritization was based on the fact that *"for human and mouse, this combined Ensembl/HAVANA gene set is the default gene set from the GENCODE project"* ([source](https://useast.ensembl.org/info/genome/genebuild/annotation_merge.html)).
+
+**DISCLAIMER**: The provided code was tested only for a small number of genes (6) on mouse (Mus musculus, GRCm38, Ensembl 98); R version = 4.0.1.
+
+If you find any bugs, feel free to open a ticket.
+
+---
 
 ## Shape Changes In Selecting Sample Outliers in RNA-seq
 
