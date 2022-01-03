@@ -13,7 +13,7 @@ In this modified version:
 
 2. The function prioritizes a single annotation source for which to return the regions. Annotation priority is as follows: **Ensembl-Havana > Ensembl > Havana**. This was done in hope of alleviating issues similar to those described in [issue hyochoi#3](hyochoi#3), which seem to stem from the concatenation of exons from all available sources. The annotation prioritization was based on the fact that *"for human and mouse, this combined Ensembl/HAVANA gene set is the default gene set from the GENCODE project"* ([source](https://useast.ensembl.org/info/genome/genebuild/annotation_merge.html)).
 
-**DISCLAIMER**: The provided code was tested only for a small number of genes (6) on mouse (Mus musculus, GRCm38, Ensembl 98); R version = 4.0.1.
+**DISCLAIMER**: The provided code was tested only for a small number of genes (6) on mouse (Mus musculus, GRCm38, Ensembl 98); R version = 4.0.1. Possible discrepancies for different GTF files.
 
 If you find any bugs, feel free to open a ticket.
 
